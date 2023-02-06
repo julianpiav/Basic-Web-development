@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Segunda Sesion HTML</title>
+</head>
+
+<body>
+    <h1>1) Botones con acciones y mensajes</h1>
+    <button>Boton basico</button>
+    <br><br>
+
+    <button onclick="accion_1()" id="Bt1"> Boton 1 </button> <br>
+    <button onclick="accion_2()" id="Bt2"> Boton 2 </button> <br><br>
+    <button onclick="accion_3()" id="Bt3"> Boton 3 </button> <br><br><br>
+    <!--El on click es por decirlo, un metodo del boton, el id es el identificador de ese boton-->
+    <h2>2) Despliegue de Datos:</h2>
+    <br><br>
+    <b>Hola, a continuacion solicitaremos algunos datos personales, esperamos que nos puedas colaborar
+        con tu informacion. ¡Muchas gracias!
+    </b> <!--Revisar aveas data para la manipulacion de datos-->
+    <br><br>
+
+    Primer Nombre : <input type="text" name="Recibir texto 1" id="Tx_1">
+    <!--Caja de texto(CUADRO DE ENTRADA), con un nombre y un identificador-->
+    Segundo Nombre : <input type="text" name="Recibir texto 2" id="Tx_2">
+    <br>
+    <p> Primer Apellido : <input type="text" name="Recibir texto 3" id="Tx_3"> </p>
+    <p> Segunda Apellido : <input type="text" name="Recibir texto 3" id="Tx_4"> <br> </p>
+
+    <button onclick="accion_4()" id="Bt4"> Concatenar </button> <br><br>
+    <br><br>
+
+    Nombre Completo:&nbsp;<output id="Out_1"></output>
+    <!--(CUADRO DE SALIDA) con identificador -->
+
+    <style type="text/css">
+        /*CSS, Pero el lenguaje sigue siendo Html*(Comentario en CSS)*/
+        body {
+            background-image: url(Tra\ tra.png);
+            opacity: 100;
+            ;
+            /*Imagen de fondo*/
+            background-repeat: round;
+            color: rgb(0, 0, 255);
+        }
+
+        h1 {
+            color: rgba(20, 164, 130, 1.0)
+        }
+
+        h2 {
+            color: rgba(20, 80, 20, 1.0);
+        }
+
+        #Out_1 {
+            color: rgba(200, 43, 2, 1);
+        }
+    </style>
+
+    <script type="text/javascript">
+        //Comentario en Javascrpit
+        function accion_1() {
+            alert("Boton 1 Hola!")
+            //Alerta en una pagina web
+        }
+        function accion_2() {
+            confirm("Boton 2!")
+            //Confirmacion en una pagina web
+        }
+        function accion_3() {
+            alert("Accion del boton 3"); confirm("Mensaje del boton 3")
+        }
+        function accion_4() {
+            var nombreCompleto = document.getElementById("Tx_1").value + " " +
+                document.getElementById("Tx_2").value + " " +
+                document.getElementById("Tx_3").value + " " +
+                document.getElementById("Tx_4").value
+            // Creacion de una varible tipo var, tomando los valores de texto en las cajas de texto anteriores//
+            alert(nombreCompleto)
+            //Alertar con el nombre escrito
+            document.getElementById("Out_1").innerHTML = nombreCompleto
+            //Mostrar el nombre en una caja de texto de salida
+        }
+    </script>
+</body>
+
+</html>
+<!--TAREA: Revisar funciones de alertas y confirmaciones, usar mas variebles que no sean textos(numeros...)-->
